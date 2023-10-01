@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const getStaticProps: GetStaticProps =async () => {
-  const { results } = await fetchPages() 
+  const { results } = await fetchPages({}) 
   return {
     props: {
       pages: results ? results : [],
