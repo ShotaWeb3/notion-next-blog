@@ -19,6 +19,9 @@ export type CardProps = {
   page: PageProps
 }
 
+export type ArticleProps = CardProps
+export type ArticleMetaProps = CardProps
+
 export type Params = ParsedUrlQuery & {
   slug: string
 }
