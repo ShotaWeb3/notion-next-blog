@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 
 const Card: FC<CardProps> = ({ page }) => {
   return (
-    <Link legacyBehavior href={`/`}>
+    <Link legacyBehavior href={`/articles/${page.slug}`}>
       <a className="flex justify-center ">
         <div className="max-w-sm rounded overflow-hidden shadow-lg w-full my-4 md:my-0 content-between grid">
           {/* image */}
