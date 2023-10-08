@@ -4,10 +4,8 @@ import Layout from "../../components/Layout"
 import ArticleMeta from "@/components/ArticleMeta"
 import { GetServerSideProps, GetStaticPaths, GetStaticProps, NextPage } from "next"
 import { ArticleProps, Params } from "@/types/types"
-import { sampleCards } from "@/utils/sample"
 import { fetchBlocksByPageId, fetchPages } from "@/utils/notion"
 import { getText } from "@/utils/property"
-import Block from "@/components/Block"
 import NotionBlocks from "notion-block-renderer"
 
 export const getStaticPaths: GetStaticPaths =async () => {
