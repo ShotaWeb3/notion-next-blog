@@ -7,6 +7,7 @@ import { ArticleProps, Params } from "@/types/types"
 import { sampleCards } from "@/utils/sample"
 import { fetchBlocksByPageId, fetchPages } from "@/utils/notion"
 import { getText } from "@/utils/property"
+import Block from "@/components/Block"
 
 export const getStaticPaths: GetStaticPaths =async () => {
   const { results } = await fetchPages({})
@@ -43,7 +44,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
   console.log("page", page)
   console.log("blocks", blocks)
-  return <></>
   return (
     <Layout>
       <article className="w-full">
@@ -53,7 +53,11 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
         </div>
  
         {/* article */}
-        <div className="my-12">article {page.content}</div>
+        <div className="my-12">
+          {blocks.map((block, index) => (
+            <Block key={index} block={block} />
+          ))}
+        </div>
       </article>
     </Layout>
   );
