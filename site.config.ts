@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "Notion Next Blog",
+  title: "Increase Engineer Blog",
   twitterUrl: "",
   instagramUrl: "",
   githubUrl: "https://github.com/ShotaWeb3",
