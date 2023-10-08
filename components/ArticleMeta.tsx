@@ -1,6 +1,7 @@
 import { ArticleMetaProps } from '@/types/types'
 import { getCover, getDate, getMultiSelect, getText } from '@/utils/property'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 const ArticleMeta: FC<ArticleMetaProps> = ({ page } ) => {
@@ -33,7 +34,11 @@ const ArticleMeta: FC<ArticleMetaProps> = ({ page } ) => {
         <div className="col-span-2">
           {/* change later */}
           {getMultiSelect(page.properties.tags.multi_select).map((tag: string, index: number) => (
-              <span key={index}>{`#${tag} `}</span>
+              <Link legacyBehavior key={index} href={`/tags/${tag}`}>
+                <a className="text-gray-700 no-underline border-b border-solid border-gray-700 opacity-70 mr-3">
+                  <span>{`#${tag}`}</span>
+                </a>
+              </Link>
             ))}
         </div>
       </div>
