@@ -11,7 +11,8 @@ const ArticleMeta: FC<ArticleMetaProps> = ({ page } ) => {
       className="w-full max-w-screen-lg rounded-lg aspect-video my-4"
       src={getCover(page.cover)}
       alt=""
-      objectFit="cover"
+      priority
+      style={{objectFit:"cover"}}
       width={640}
       height={360}
       quality={50}
